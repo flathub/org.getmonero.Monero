@@ -4,7 +4,7 @@ finish-args:
   - --share=network
   - --share=ipc
   - --device=all
-  - --filesystem=~/Monero
+  - --filesystem=~/Monero:create
   - --persist=.bitmonero
 runtime: org.kde.Platform
 runtime-version: '5.15'
