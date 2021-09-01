@@ -3,7 +3,7 @@
     <id>org.getmonero.Monero</id>
     <metadata_license>CC0-1.0</metadata_license>
     <project_license>BSD-3-Clause</project_license>
-    <content_rating type="oars-1.1" />
+    <content_rating type="oars-1.1"/>
     <name>Monero GUI</name>
     <summary>Monero: the secure, private, untraceable cryptocurrency</summary>
     
@@ -43,6 +43,7 @@
     <url type="bugtracker">https://github.com/monero-project/monero-gui/issues</url>
 
     <releases>
+        <release version="v0.17.2.3" date="2021-09-01"/>
         <release version="0.17.2.2" date="2021-05-14">
             <description>
                 <ul>
