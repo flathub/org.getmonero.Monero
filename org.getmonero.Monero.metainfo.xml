@@ -43,6 +43,25 @@
     <url type="bugtracker">https://github.com/monero-project/monero-gui/issues</url>
 
     <releases>
+<release version="0.17.2.3" date="2021-09-01">
+            <description>
+                <ul>
+                    <li>Add payment request functionality to receive page (#3650)</li>
+                    <li>Display images on create hardware wallet page (#3618)</li>
+                    <li>Reenable password strength meter in release binaries (#3562)</li>
+                    <li>Automatically correct incorrectly typed restore dates (#3564)</li>
+                    <li>Add tooltips to all buttons (#3490)</li>
+                    <li>Add search transactions button on receive and account page (#3216, #3546)</li>
+                    <li>Set an unused wallet name in wizard (#3544)</li>
+                    <li>Fix bug not accepting new restore height (#3563)</li>
+                    <li>Fix get / check proof on Sign / Verify page (#3674)</li>
+                    <li>Fix scanning QR codes that miss an URI prefix (#3598)</li>
+                    <li>Various date picker improvements</li>
+                    <li>Accessibility improvements (#3611, #3603)</li>
+                    <li>Minor bug fixes and UI improvements</li>
+                </ul>
+            </description>
+        </release>
         <release version="0.17.2.2" date="2021-05-14">
             <description>
                 <ul>
