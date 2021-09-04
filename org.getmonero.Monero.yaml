@@ -15,8 +15,8 @@ modules:
     buildsystem: simple
     sources:
       - type: archive
-        url: https://downloads.getmonero.org/gui/monero-gui-linux-x64-v0.17.2.2.tar.bz2
-        sha256: 0088b133febdb151a3753393b4dc8b06111b844c0fca14e512f3c8d56a2a5b97
+        url: https://downloads.getmonero.org/gui/monero-gui-linux-x64-v0.17.2.3.tar.bz2
+        sha256: f011ba2bd67395ca8c17d5faf1397785905533dd1a8b9ebf1e6810d0f726f40f
         x-checker-data:
           type: json
           url: https://api.github.com/repos/monero-project/monero-gui/releases/latest
