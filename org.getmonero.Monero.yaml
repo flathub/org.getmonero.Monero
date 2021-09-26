@@ -24,9 +24,9 @@ modules:
           url-query: '"https://downloads.getmonero.org/gui/monero-gui-linux-x64-"
             + $version + ".tar.bz2"'
     build-commands:
-      - install -d /app/bin
-      - cp monero-wallet-gui /app/bin/monero-wallet-gui
-      - cp monerod /app/bin/monerod
+      - install -Dm755 monero-wallet-gui /app/bin/monero-wallet-gui
+      - install -Dm755 monerod /app/bin/monerod
+      
   - name: monero-extra
     buildsystem: simple
     sources:
@@ -37,6 +37,6 @@ modules:
       - type: file
         path: org.getmonero.Monero.metainfo.xml
     build-commands:
-      - install -D org.getmonero.Monero.desktop /app/share/applications/org.getmonero.Monero.desktop
-      - install -D org.getmonero.Monero.svg /app/share/icons/hicolor/scalable/apps/org.getmonero.Monero.svg
-      - install -D org.getmonero.Monero.metainfo.xml /app/share/metainfo/org.getmonero.Monero.metainfo.xml
+      - install -Dm644 org.getmonero.Monero.desktop /app/share/applications/org.getmonero.Monero.desktop
+      - install -Dm644 org.getmonero.Monero.svg /app/share/icons/hicolor/scalable/apps/org.getmonero.Monero.svg
+      - install -Dm644 org.getmonero.Monero.metainfo.xml /app/share/metainfo/org.getmonero.Monero.metainfo.xml
