@@ -14,8 +14,8 @@ modules:
   - name: monero-bin
     buildsystem: simple
     build-commands:
-      - install -Dm755 monero-wallet-gui /app/bin/monero-wallet-gui
-      - install -Dm755 monerod /app/bin/monerod
+      - install -Dpm755 monero-wallet-gui /app/bin/monero-wallet-gui
+      - install -Dpm755 monerod /app/bin/monerod
     sources:
       - type: archive
         url: https://downloads.getmonero.org/gui/monero-gui-linux-x64-v0.17.2.3.tar.bz2
@@ -30,9 +30,9 @@ modules:
   - name: monero-extra
     buildsystem: simple
     build-commands:
-      - install -Dm644 org.getmonero.Monero.desktop /app/share/applications/org.getmonero.Monero.desktop
-      - install -Dm644 org.getmonero.Monero.svg /app/share/icons/hicolor/scalable/apps/org.getmonero.Monero.svg
-      - install -Dm644 org.getmonero.Monero.metainfo.xml /app/share/metainfo/org.getmonero.Monero.metainfo.xml
+      - install -Dpm644 org.getmonero.Monero.desktop /app/share/applications/org.getmonero.Monero.desktop
+      - install -Dpm644 org.getmonero.Monero.svg /app/share/icons/hicolor/scalable/apps/org.getmonero.Monero.svg
+      - install -Dpm644 org.getmonero.Monero.metainfo.xml /app/share/metainfo/org.getmonero.Monero.metainfo.xml
     sources:
       - type: file
         path: extra/org.getmonero.Monero.desktop
