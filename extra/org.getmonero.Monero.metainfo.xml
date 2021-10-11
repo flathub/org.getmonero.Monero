@@ -4,6 +4,13 @@
     <metadata_license>CC0-1.0</metadata_license>
     <project_license>BSD-3-Clause</project_license>
     <content_rating type="oars-1.1" />
+    <developer_name>The Monero Project</developer_name>
+    <categories>
+        <category>Network</category>
+        <category>Qt</category>
+        <category>Finance</category>
+        <category>Office</category>
+    </categories>
     <name>Monero GUI</name>
     <summary>Monero: the secure, private, untraceable cryptocurrency</summary>
     
@@ -43,7 +50,7 @@
     <url type="bugtracker">https://github.com/monero-project/monero-gui/issues</url>
 
     <releases>
-<release version="0.17.2.3" date="2021-09-01">
+        <release version="0.17.2.3" date="2021-09-01">
             <description>
                 <ul>
                     <li>Add payment request functionality to receive page (#3650)</li>
