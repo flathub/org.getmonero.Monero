@@ -1,31 +1,98 @@
 app-id: org.getmonero.Monero
 runtime: org.kde.Platform
-runtime-version: '5.15-21.08'
+runtime-version: 5.15-21.08
 sdk: org.kde.Sdk
 finish-args:
-  - --socket=x11
   - --share=network
   - --share=ipc
+  - --socket=x11
   - --device=all
   - --filesystem=~/Monero:create
   - --persist=.bitmonero
+cleanup:
+  - /include
+  - '*.a'
+  - '*la'
+  - /etc
+  - /share/man
+  - /sbin
+  - /lib/pkgconfig
 command: monero-wallet-gui
 modules:
-  - name: monero-bin
+
+  - shared-modules/libusb/libusb.json
+
+  - name: boost
     buildsystem: simple
-    build-commands:
-      - install -Dpm755 monero-wallet-gui /app/bin/monero-wallet-gui
-      - install -Dpm755 monerod /app/bin/monerod
     sources:
       - type: archive
-        url: https://downloads.getmonero.org/gui/monero-gui-linux-x64-v0.17.2.3.tar.bz2
-        sha256: f011ba2bd67395ca8c17d5faf1397785905533dd1a8b9ebf1e6810d0f726f40f
-        x-checker-data:
-          type: json
-          url: https://api.github.com/repos/monero-project/monero-gui/releases/latest
-          version-query: .tag_name
-          url-query: '"https://downloads.getmonero.org/gui/monero-gui-linux-x64-"
-            + $version + ".tar.bz2"'
+        url: https://boostorg.jfrog.io/artifactory/main/release/1.77.0/source/boost_1_77_0.tar.gz
+        sha256: 5347464af5b14ac54bb945dc68f1dd7c56f0dad7262816b956138fc53bcc0131
+    build-commands:
+      - ./bootstrap.sh --prefix=$FLATPAK_DEST --with-libraries=chrono,date_time,filesystem,locale,program_options,regex,serialization,system,thread
+      - ./b2 headers
+      - ./b2 -j$FLATPAK_BUILDER_N_JOBS install variant=release --layout=system
+
+  - name: protobuf
+    sources:
+      - type: archive
+        url: https://github.com/protocolbuffers/protobuf/releases/download/v3.18.1/protobuf-cpp-3.18.1.tar.gz
+        sha256: 6ee35eda3f79e49608d2ace8d866313fdec539d8bb14c6c54e8d2a16fa4e6780
+
+  - name: ldns
+    cleanup:
+      - /bin
+    sources:
+      - type: archive
+        url: https://nlnetlabs.nl/downloads/ldns/ldns-1.7.1.tar.gz
+        sha256: 8ac84c16bdca60e710eea75782356f3ac3b55680d40e1530d7cea474ac208229
+
+  - name: unbound
+    sources:
+      - type: archive
+        url: https://www.nlnetlabs.nl/downloads/unbound/unbound-1.13.2.tar.gz
+        sha256: 0a13b547f3b92a026b5ebd0423f54c991e5718037fd9f72445817f6a040e1a83
+
+  - name: libsodium
+    sources:
+      - type: archive
+        url: https://github.com/jedisct1/libsodium/archive/1.0.18/libsodium/1.0.18.tar.gz
+        sha256: d59323c6b712a1519a5daf710b68f5e7fde57040845ffec53850911f10a5d4f4
+
+  - name: hidapi
+    buildsystem: cmake
+    sources:
+      - type: archive
+        url: https://github.com/libusb/hidapi/archive/refs/tags/hidapi-0.11.0.tar.gz
+        sha256: 391d8e52f2d6a5cf76e2b0c079cfefe25497ba1d4659131297081fc0cd744632
+
+  - name: openpgm
+    subdir: openpgm/pgm
+    sources:
+      - type: archive
+        url: https://github.com/steve-o/openpgm/archive/refs/tags/release-5-3-128.tar.gz
+        sha256: 8d707ef8dda45f4a7bc91016d7f2fed6a418637185d76c7ab30b306499c6d393
+      - type: patch
+        path: openpgm-fix-build.patch
+
+  - name: libzmq
+    config-opts:
+      - --with-pgm
+      - --with-libsodium
+      - --disable-Werror
+    sources:
+      - type: archive
+        url: https://github.com/zeromq/libzmq/releases/download/v4.3.4/zeromq-4.3.4.tar.gz
+        sha256: c593001a89f5a85dd2ddf564805deb860e02471171b3f204944857336295c3e5
+
+  - name: monero-gui
+    buildsystem: cmake
+    config-opts:
+      - -DCMAKE_BUILD_TYPE=Release
+    sources:
+      - type: archive
+        url: https://downloads.getmonero.org/gui/monero-gui-source-v0.17.2.3.tar.bz2
+        sha256: e41c664ecbea30aca9b9ad5bcf8b35cc6caee77e0efa0c3399acb8ae5f139d9d
 
   - name: monero-extra
     buildsystem: simple
