@@ -35,8 +35,8 @@ modules:
       - install -Dm644 org.getmonero.Monero.metainfo.xml /app/share/metainfo/org.getmonero.Monero.metainfo.xml
     sources:
       - type: file
-        path: org.getmonero.Monero.desktop
+        path: extra/org.getmonero.Monero.desktop
       - type: file
-        path: org.getmonero.Monero.svg
+        path: extra/org.getmonero.Monero.svg
       - type: file
-        path: org.getmonero.Monero.metainfo.xml
+        path: extra/org.getmonero.Monero.metainfo.xml
