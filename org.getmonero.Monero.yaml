@@ -1,4 +1,7 @@
 app-id: org.getmonero.Monero
+runtime: org.kde.Platform
+runtime-version: '5.15-21.08'
+sdk: org.kde.Sdk
 finish-args:
   - --socket=x11
   - --share=network
@@ -6,13 +9,13 @@ finish-args:
   - --device=all
   - --filesystem=~/Monero:create
   - --persist=.bitmonero
-runtime: org.kde.Platform
-runtime-version: '5.15-21.08'
-sdk: org.kde.Sdk
 command: monero-wallet-gui
 modules:
   - name: monero-bin
     buildsystem: simple
+    build-commands:
+      - install -Dm755 monero-wallet-gui /app/bin/monero-wallet-gui
+      - install -Dm755 monerod /app/bin/monerod
     sources:
       - type: archive
         url: https://downloads.getmonero.org/gui/monero-gui-linux-x64-v0.17.2.3.tar.bz2
@@ -23,12 +26,13 @@ modules:
           version-query: .tag_name
           url-query: '"https://downloads.getmonero.org/gui/monero-gui-linux-x64-"
             + $version + ".tar.bz2"'
-    build-commands:
-      - install -Dm755 monero-wallet-gui /app/bin/monero-wallet-gui
-      - install -Dm755 monerod /app/bin/monerod
-      
+
   - name: monero-extra
     buildsystem: simple
+    build-commands:
+      - install -Dm644 org.getmonero.Monero.desktop /app/share/applications/org.getmonero.Monero.desktop
+      - install -Dm644 org.getmonero.Monero.svg /app/share/icons/hicolor/scalable/apps/org.getmonero.Monero.svg
+      - install -Dm644 org.getmonero.Monero.metainfo.xml /app/share/metainfo/org.getmonero.Monero.metainfo.xml
     sources:
       - type: file
         path: org.getmonero.Monero.desktop
@@ -36,7 +40,3 @@ modules:
         path: org.getmonero.Monero.svg
       - type: file
         path: org.getmonero.Monero.metainfo.xml
-    build-commands:
-      - install -Dm644 org.getmonero.Monero.desktop /app/share/applications/org.getmonero.Monero.desktop
-      - install -Dm644 org.getmonero.Monero.svg /app/share/icons/hicolor/scalable/apps/org.getmonero.Monero.svg
-      - install -Dm644 org.getmonero.Monero.metainfo.xml /app/share/metainfo/org.getmonero.Monero.metainfo.xml
