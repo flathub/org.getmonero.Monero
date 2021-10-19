@@ -90,6 +90,12 @@ modules:
     buildsystem: cmake
     config-opts:
       - -DCMAKE_BUILD_TYPE=Release
+    build-options:
+      arch:
+        aarch64:
+          config-opts:
+            - -DARCH=armv8-a
+            - -DBUILD_TAG=linux-armv8
     sources:
       - type: archive
         url: https://downloads.getmonero.org/gui/monero-gui-source-v0.17.2.3.tar.bz2
