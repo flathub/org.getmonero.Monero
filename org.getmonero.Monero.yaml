@@ -35,8 +35,8 @@ modules:
   - name: protobuf
     sources:
       - type: archive
-        url: https://github.com/protocolbuffers/protobuf/releases/download/v3.18.1/protobuf-cpp-3.18.1.tar.gz
-        sha256: 6ee35eda3f79e49608d2ace8d866313fdec539d8bb14c6c54e8d2a16fa4e6780
+        url: https://github.com/protocolbuffers/protobuf/releases/download/v3.19.0/protobuf-cpp-3.19.0.tar.gz
+        sha256: 24ce6d7c1899cf4dbc360354bd5420dab9927a2a30e533af5357c719b0f50672
 
   - name: ldns
     cleanup:
