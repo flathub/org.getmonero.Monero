@@ -11,11 +11,12 @@ finish-args:
   - --persist=.bitmonero
 cleanup:
   - /include
-  - '*.a'
-  - '*la'
   - /etc
   - /share/man
   - /lib/pkgconfig
+  - /lib/cmake
+  - '*.a'
+  - '*.la'
 command: monero-wallet-gui
 modules:
 
