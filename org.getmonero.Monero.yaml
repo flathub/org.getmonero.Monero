@@ -9,6 +9,7 @@ finish-args:
   - --device=all
   - --filesystem=~/Monero:create
   - --persist=.bitmonero
+
 cleanup:
   - /include
   - /etc
@@ -17,6 +18,7 @@ cleanup:
   - /lib/cmake
   - '*.a'
   - '*.la'
+
 command: monero-wallet-gui
 modules:
   - shared-modules/libusb/libusb.json
@@ -37,6 +39,10 @@ modules:
       - type: archive
         url: https://github.com/protocolbuffers/protobuf/releases/download/v3.19.1/protobuf-cpp-3.19.1.tar.gz
         sha256: 645192532f28254152b51c01868efdf9b766b1dbe49c77cccd6efcdb2d7c7bc2
+        x-checker-data:
+          type: anitya
+          project-id: 236278
+          url-template: https://github.com/protocolbuffers/protobuf/releases/download/v$version/protobuf-cpp-$version.tar.gz
 
   - name: ldns
     cleanup:
@@ -45,6 +51,10 @@ modules:
       - type: archive
         url: https://nlnetlabs.nl/downloads/ldns/ldns-1.7.1.tar.gz
         sha256: 8ac84c16bdca60e710eea75782356f3ac3b55680d40e1530d7cea474ac208229
+        x-checker-data:
+          type: anitya
+          project-id: 14817
+          url-template: https://nlnetlabs.nl/downloads/ldns/ldns-$version.tar.gz
 
   - name: libunbound
     config-opts:
@@ -53,26 +63,42 @@ modules:
       - type: archive
         url: https://www.nlnetlabs.nl/downloads/unbound/unbound-1.13.2.tar.gz
         sha256: 0a13b547f3b92a026b5ebd0423f54c991e5718037fd9f72445817f6a040e1a83
+        x-checker-data:
+          type: anitya
+          project-id: 5042
+          url-template: https://www.nlnetlabs.nl/downloads/unbound/unbound-$version.tar.gz
 
   - name: libsodium
     sources:
       - type: archive
         url: https://github.com/jedisct1/libsodium/archive/1.0.18/libsodium/1.0.18.tar.gz
         sha256: d59323c6b712a1519a5daf710b68f5e7fde57040845ffec53850911f10a5d4f4
+        x-checker-data:
+          type: anitya
+          project-id: 1728
+          url-template: https://github.com/jedisct1/libsodium/archive/$version/libsodium/$version.tar.gz
 
   - name: hidapi
     buildsystem: cmake
     sources:
       - type: archive
-        url: https://github.com/libusb/hidapi/archive/refs/tags/hidapi-0.11.0.tar.gz
+        url: https://github.com/libusb/hidapi/archive/hidapi-0.11.0.tar.gz
         sha256: 391d8e52f2d6a5cf76e2b0c079cfefe25497ba1d4659131297081fc0cd744632
+        x-checker-data:
+          type: anitya
+          project-id: 5594
+          url-template: https://github.com/libusb/hidapi/archive/hidapi-$version.tar.gz
 
   - name: openpgm
     subdir: openpgm/pgm
     sources:
       - type: archive
-        url: https://github.com/steve-o/openpgm/archive/refs/tags/release-5-3-128.tar.gz
+        url: https://github.com/steve-o/openpgm/archive/release-5-3-128.tar.gz
         sha256: 8d707ef8dda45f4a7bc91016d7f2fed6a418637185d76c7ab30b306499c6d393
+        x-checker-data:
+          type: anitya
+          project-id: 6598
+          url-template: https://github.com/steve-o/openpgm/archive/release-$version.tar.gz
       - type: patch
         path: openpgm-fix-build.patch
 
@@ -85,6 +111,10 @@ modules:
       - type: archive
         url: https://github.com/zeromq/libzmq/releases/download/v4.3.4/zeromq-4.3.4.tar.gz
         sha256: c593001a89f5a85dd2ddf564805deb860e02471171b3f204944857336295c3e5
+        x-checker-data:
+          type: anitya
+          project-id: 16245
+          url-template: https://github.com/zeromq/libzmq/releases/download/v$version/zeromq-$version.tar.gz
 
   - name: monero-gui
     buildsystem: cmake
@@ -100,6 +130,10 @@ modules:
       - type: archive
         url: https://downloads.getmonero.org/gui/monero-gui-source-v0.17.2.3.tar.bz2
         sha256: e41c664ecbea30aca9b9ad5bcf8b35cc6caee77e0efa0c3399acb8ae5f139d9d
+        x-checker-data:
+          type: anitya
+          project-id: 235010
+          url-template: https://downloads.getmonero.org/gui/monero-gui-source-v$version.tar.bz2
 
   - name: monero-extra
     buildsystem: simple
