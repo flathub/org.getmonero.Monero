@@ -4,6 +4,7 @@ runtime-version: '5.15-21.08'
 sdk: org.kde.Sdk
 finish-args:
   - --socket=x11
+  - --socket=wayland
   - --share=network
   - --share=ipc
   - --device=all
