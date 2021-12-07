@@ -129,7 +129,7 @@ modules:
     sources:
       - type: archive
         url: https://downloads.getmonero.org/gui/monero-gui-source-v0.17.3.0.tar.bz2
-        sha256: 2ee1b5f857c4ba14f13fcf4ebcccd1635ba09988cfa32de7a92a9c6712aacf29
+        sha256: 80140176d0ebf9e471f4da1632c75b03a41ebdfc523b53006e1f78665cb288be
         x-checker-data:
           type: anitya
           project-id: 235010
