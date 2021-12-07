@@ -128,8 +128,8 @@ modules:
             - -DBUILD_TAG=linux-armv8
     sources:
       - type: archive
-        url: https://downloads.getmonero.org/gui/monero-gui-source-v0.17.2.3.tar.bz2
-        sha256: e41c664ecbea30aca9b9ad5bcf8b35cc6caee77e0efa0c3399acb8ae5f139d9d
+        url: https://downloads.getmonero.org/gui/monero-gui-source-v0.17.3.0.tar.bz2
+        sha256: 2ee1b5f857c4ba14f13fcf4ebcccd1635ba09988cfa32de7a92a9c6712aacf29
         x-checker-data:
           type: anitya
           project-id: 235010
