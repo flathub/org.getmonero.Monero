@@ -1,6 +1,6 @@
 app-id: org.getmonero.Monero
 runtime: org.kde.Platform
-runtime-version: '5.15-21.08'
+runtime-version: 5.15-21.08
 sdk: org.kde.Sdk
 finish-args:
   - --socket=x11
@@ -18,8 +18,8 @@ modules:
       - install -Dpm755 monerod /app/bin/monerod
     sources:
       - type: archive
-        url: https://downloads.getmonero.org/gui/monero-gui-linux-x64-v0.17.2.3.tar.bz2
-        sha256: f011ba2bd67395ca8c17d5faf1397785905533dd1a8b9ebf1e6810d0f726f40f
+        url: https://downloads.getmonero.org/gui/monero-gui-linux-x64-v0.17.3.0.tar.bz2
+        sha256: ca41cc213b3e1a82e375030bba1f46bf154b6c2ec7f858d207cf1f6dee233cd4
         x-checker-data:
           type: json
           url: https://api.github.com/repos/monero-project/monero-gui/releases/latest
