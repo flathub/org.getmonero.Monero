@@ -3,7 +3,7 @@
     <id>org.getmonero.Monero</id>
     <metadata_license>CC0-1.0</metadata_license>
     <project_license>BSD-3-Clause</project_license>
-    <content_rating type="oars-1.1" />
+    <content_rating type="oars-1.1"/>
     <developer_name>The Monero Project</developer_name>
     <categories>
         <category>Network</category>
@@ -50,6 +50,24 @@
     <url type="bugtracker">https://github.com/monero-project/monero-gui/issues</url>
 
     <releases>
+        <release version="0.17.3.0" date="2021-12-07">
+            <description>
+                <ul>
+                    <li>Add import / export output function (#3435)</li>
+                    <li>Export all key images by default (#3282)</li>
+                    <li>Update translations (#3773)</li>
+                    <li>Add description to CSV export (#3572)</li>
+                    <li>Add colors to password strength meter (#3682)</li>
+                    <li>Add Cut, Copy, Delete and Select All to context menu (#3689)</li>
+                    <li>Fix buffer overflow in zxcvbn library (#3735)</li>
+                    <li>Fix font issue on Arch Linux (#3753)</li>
+                    <li>Fix compilation for Apple ARM (#3697, #3723, #3731)</li>
+                    <li>Mining page design tweaks (#3742)</li>
+                    <li>Minor bug fixes and UI improvements</li>
+                </ul>
+            </description>
+        </release>
+
         <release version="0.17.2.3" date="2021-09-01">
             <description>
                 <ul>
@@ -69,6 +87,7 @@
                 </ul>
             </description>
         </release>
+
         <release version="0.17.2.2" date="2021-05-14">
             <description>
                 <ul>
