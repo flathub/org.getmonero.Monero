@@ -126,6 +126,9 @@ modules:
           config-opts:
             - -DARCH=armv8-a
             - -DBUILD_TAG=linux-armv8
+        x86_64:
+          config-opts:
+            - -DARCH=default
     sources:
       - type: archive
         url: https://downloads.getmonero.org/gui/monero-gui-source-v0.17.3.0.tar.bz2
