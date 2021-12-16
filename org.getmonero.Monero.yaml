@@ -31,8 +31,8 @@ modules:
       - ./b2 -j$FLATPAK_BUILDER_N_JOBS install variant=release --layout=system
     sources:
       - type: archive
-        url: https://boostorg.jfrog.io/artifactory/main/release/1.77.0/source/boost_1_77_0.tar.gz
-        sha256: 5347464af5b14ac54bb945dc68f1dd7c56f0dad7262816b956138fc53bcc0131
+        url: https://boostorg.jfrog.io/artifactory/main/release/1.78.0/source/boost_1_78_0.tar.gz
+        sha256: 94ced8b72956591c4775ae2207a9763d3600b30d9d7446562c552f0a14a63be7
 
   - name: protobuf
     sources:
