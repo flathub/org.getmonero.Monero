@@ -39,10 +39,6 @@ modules:
       - type: archive
         url: https://github.com/protocolbuffers/protobuf/releases/download/v3.19.1/protobuf-cpp-3.19.1.tar.gz
         sha256: 645192532f28254152b51c01868efdf9b766b1dbe49c77cccd6efcdb2d7c7bc2
-        x-checker-data:
-          type: anitya
-          project-id: 236278
-          url-template: https://github.com/protocolbuffers/protobuf/releases/download/v$version/protobuf-cpp-$version.tar.gz
 
   - name: ldns
     cleanup:
@@ -52,31 +48,33 @@ modules:
         url: https://nlnetlabs.nl/downloads/ldns/ldns-1.8.1.tar.gz
         sha256: 958229abce4d3aaa19a75c0d127666564b17216902186e952ca4aef47c6d7fa3
         x-checker-data:
-          type: anitya
-          project-id: 14817
-          url-template: https://nlnetlabs.nl/downloads/ldns/ldns-$version.tar.gz
+          type: html
+          url: https://nlnetlabs.nl/downloads/ldns/
+          pattern: (ldns-([\d\.]+)\.tar\.gz)
 
   - name: libunbound
     config-opts:
       - --with-libunbound-only
     sources:
       - type: archive
-        url: https://www.nlnetlabs.nl/downloads/unbound/unbound-1.14.0.tar.gz
+        url: https://nlnetlabs.nl/downloads/unbound/unbound-1.14.0.tar.gz
         sha256: 6ef91cbf02d5299eab39328c0857393de7b4885a2fe7233ddfe3c124ff5a89c8
         x-checker-data:
-          type: anitya
-          project-id: 5042
-          url-template: https://www.nlnetlabs.nl/downloads/unbound/unbound-$version.tar.gz
+          type: html
+          url: https://nlnetlabs.nl/downloads/unbound/
+          pattern: (unbound-([\d\.]+)\.tar\.gz)
 
   - name: libsodium
     sources:
       - type: archive
-        url: https://github.com/jedisct1/libsodium/archive/1.0.18/libsodium/1.0.18.tar.gz
-        sha256: d59323c6b712a1519a5daf710b68f5e7fde57040845ffec53850911f10a5d4f4
+        url: https://github.com/jedisct1/libsodium/releases/download/1.0.18-RELEASE/libsodium-1.0.18.tar.gz
+        sha256: 6f504490b342a4f8a4c4a02fc9b866cbef8622d5df4e5452b46be121e46636c1
         x-checker-data:
-          type: anitya
-          project-id: 1728
-          url-template: https://github.com/jedisct1/libsodium/archive/$version/libsodium/$version.tar.gz
+          type: json
+          url: https://api.github.com/repos/jedisct1/libsodium/releases/latest
+          version-query: .name
+          url-query: |
+            .assets | map(select(.name=="libsodium-\($version).tar.gz")) | first | .browser_download_url
 
   - name: hidapi
     buildsystem: cmake
@@ -84,10 +82,6 @@ modules:
       - type: archive
         url: https://github.com/libusb/hidapi/archive/hidapi-0.11.0.tar.gz
         sha256: 391d8e52f2d6a5cf76e2b0c079cfefe25497ba1d4659131297081fc0cd744632
-        x-checker-data:
-          type: anitya
-          project-id: 5594
-          url-template: https://github.com/libusb/hidapi/archive/hidapi-$version.tar.gz
 
   - name: openpgm
     subdir: openpgm/pgm
@@ -95,10 +89,6 @@ modules:
       - type: archive
         url: https://github.com/steve-o/openpgm/archive/release-5-3-128.tar.gz
         sha256: 8d707ef8dda45f4a7bc91016d7f2fed6a418637185d76c7ab30b306499c6d393
-        x-checker-data:
-          type: anitya
-          project-id: 6598
-          url-template: https://github.com/steve-o/openpgm/archive/release-$version.tar.gz
       - type: patch
         path: openpgm-fix-build.patch
 
@@ -111,10 +101,6 @@ modules:
       - type: archive
         url: https://github.com/zeromq/libzmq/releases/download/v4.3.4/zeromq-4.3.4.tar.gz
         sha256: c593001a89f5a85dd2ddf564805deb860e02471171b3f204944857336295c3e5
-        x-checker-data:
-          type: anitya
-          project-id: 16245
-          url-template: https://github.com/zeromq/libzmq/releases/download/v$version/zeromq-$version.tar.gz
 
   - name: monero-gui
     buildsystem: cmake
@@ -134,9 +120,11 @@ modules:
         url: https://downloads.getmonero.org/gui/monero-gui-source-v0.17.3.0.tar.bz2
         sha256: 80140176d0ebf9e471f4da1632c75b03a41ebdfc523b53006e1f78665cb288be
         x-checker-data:
-          type: anitya
-          project-id: 235010
-          url-template: https://downloads.getmonero.org/gui/monero-gui-source-v$version.tar.bz2
+          type: json
+          url: https://api.github.com/repos/monero-project/monero-gui/releases/latest
+          version-query: .tag_name
+          url-query: '"https://downloads.getmonero.org/gui/monero-gui-source-" + $version
+            + ".tar.bz2"'
 
   - name: monero-extra
     buildsystem: simple
