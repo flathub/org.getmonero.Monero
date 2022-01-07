@@ -50,6 +50,17 @@
     <url type="bugtracker">https://github.com/monero-project/monero-gui/issues</url>
 
     <releases>
+        <release version="0.17.3.1" date="2022-01-07">
+            <description>
+                <ul>
+                    <li>Fix startup crash on Apple Silicon (#3804)</li>
+                    <li>Fix wizard password not resetting after wallet creation (#3795)</li>
+                    <li>Update translations (#3811)</li>
+                    <li>Minor bug fixes and UI improvements</li>
+                </ul>
+            </description>
+        </release>
+
         <release version="0.17.3.0" date="2021-12-07">
             <description>
                 <ul>
