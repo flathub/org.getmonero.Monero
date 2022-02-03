@@ -106,6 +106,7 @@ modules:
     buildsystem: cmake
     config-opts:
       - -DCMAKE_BUILD_TYPE=Release
+      - -DWITH_DESKTOP_ENTRY=OFF
     build-options:
       arch:
         aarch64:
