@@ -116,15 +116,9 @@ modules:
           config-opts:
             - -DARCH=default
     sources:
-      - type: archive
-        url: https://downloads.getmonero.org/gui/monero-gui-source-v0.17.3.1.tar.bz2
-        sha256: 05dc55c89c4484cab5afcb7b18c389a5c6dc978dd24bc23049cd801823d16ed8
-        x-checker-data:
-          type: json
-          url: https://api.github.com/repos/monero-project/monero-gui/releases/latest
-          version-query: .tag_name
-          url-query: '"https://downloads.getmonero.org/gui/monero-gui-source-" + $version
-            + ".tar.bz2"'
+      - type: git
+        url: https://github.com/monero-project/monero-gui.git
+        commit: e9afaa9cc89acc06b41e05748c5795efdeee9627
 
   - name: monero-extra
     buildsystem: simple
