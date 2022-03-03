@@ -119,7 +119,7 @@ modules:
     sources:
       - type: git
         url: https://github.com/monero-project/monero-gui.git
-        commit: e9afaa9cc89acc06b41e05748c5795efdeee9627
+        commit: ea92f3f2721c5cbeece01e3f11de702002a5abf9
 
   - name: monero-extra
     buildsystem: simple
