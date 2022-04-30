@@ -50,6 +50,23 @@
     <url type="bugtracker">https://github.com/monero-project/monero-gui/issues</url>
 
     <releases>
+        <release version="0.17.3.2" date="2022-04-30">
+            <description>
+                <ul>
+                    <li>Integrate experimental support for P2Pool mining (#3829)</li>
+                    <li>Warn against high fees during transaction creation (#3897)</li>
+                    <li>Improvements against wallet getting stuck on exit (#3890, #3889)</li>
+                    <li>Add support for Ledger Nano S Plus</li>
+                    <li>Add support for reserve proof (#3828)</li>
+                    <li>Add a lock wallet button to the title bar (#3859)</li>
+                    <li>Fix offline signing (#3862)</li>
+                    <li>Fix adding a new address book entry (#3865)</li>
+                    <li>Update translations, add support for 5 new languages (#3832)</li>
+                    <li>Minor bug fixes and UI improvements</li>
+                </ul>
+            </description>
+        </release>
+
         <release version="0.17.3.1" date="2022-01-07">
             <description>
                 <ul>
