@@ -68,8 +68,8 @@ modules:
   - name: libsodium
     sources:
       - type: archive
-        url: https://github.com/jedisct1/libsodium/releases/download/1.0.18-RELEASE/libsodium-1.0.18.tar.gz
-        sha256: 6f504490b342a4f8a4c4a02fc9b866cbef8622d5df4e5452b46be121e46636c1
+        url: https://github.com/jedisct1/libsodium/releases/download/1.0.17/libsodium-1.0.17.tar.gz
+        sha256: 0cc3dae33e642cc187b5ceb467e0ad0e1b51dcba577de1190e9ffa17766ac2b1
         x-checker-data:
           type: json
           url: https://api.github.com/repos/jedisct1/libsodium/releases/latest
