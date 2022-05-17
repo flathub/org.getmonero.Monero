@@ -122,7 +122,7 @@ modules:
       - type: git
         url: https://github.com/SChernykh/p2pool
         tag: v2.0
-         commit: 8aebcdc580c424903221c95ebe2304a2e48b01b8
+        commit: 8aebcdc580c424903221c95ebe2304a2e48b01b8
      post-install:
        - install -Dm755 p2pool /app/bin/p2pool
 
