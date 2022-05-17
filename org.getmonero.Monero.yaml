@@ -104,7 +104,7 @@ modules:
         sha256: c593001a89f5a85dd2ddf564805deb860e02471171b3f204944857336295c3e5
 
   - name: libgss
-     sources:
+    sources:
        - type: archive
          url: https://ftp.gnu.org/gnu/gss/gss-1.0.3.tar.gz
          sha256: ff919ddc731531d65e27d7ababdc361aae05ada5f1a6dd60703d153307dcdeeb
