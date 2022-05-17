@@ -104,27 +104,27 @@ modules:
         sha256: c593001a89f5a85dd2ddf564805deb860e02471171b3f204944857336295c3e5
 
   - name: libgss
-     sources:
-       - type: archive
-         url: https://ftp.gnu.org/gnu/gss/gss-1.0.3.tar.gz
-         sha256: ff919ddc731531d65e27d7ababdc361aae05ada5f1a6dd60703d153307dcdeeb
+    sources:
+      - type: archive
+        url: https://ftp.gnu.org/gnu/gss/gss-1.0.3.tar.gz
+        sha256: ff919ddc731531d65e27d7ababdc361aae05ada5f1a6dd60703d153307dcdeeb
 
-   - name: libuv
-     buildsystem: cmake
-     sources:
-       - type: archive
-         url: https://github.com/libuv/libuv/archive/v1.44.1.tar.gz
-         sha256: e91614e6dc2dd0bfdd140ceace49438882206b7a6fb00b8750914e67a9ed6d6b
+  - name: libuv
+    buildsystem: cmake
+    sources:
+      - type: archive
+        url: https://github.com/libuv/libuv/archive/v1.44.1.tar.gz
+        sha256: e91614e6dc2dd0bfdd140ceace49438882206b7a6fb00b8750914e67a9ed6d6b
 
-   - name: p2pool
-     buildsystem: cmake
-     sources:
-       - type: git
-         url: https://github.com/SChernykh/p2pool
-         tag: v2.0
-         commit: 8aebcdc580c424903221c95ebe2304a2e48b01b8
-     post-install:
-       - install -Dm755 p2pool /app/bin/p2pool
+  - name: p2pool
+    buildsystem: cmake
+    sources:
+      - type: git
+        url: https://github.com/SChernykh/p2pool
+        tag: v2.0
+        commit: 8aebcdc580c424903221c95ebe2304a2e48b01b8
+    post-install:
+      - install -Dm755 p2pool /app/bin/p2pool
 
   - name: monero-gui
     buildsystem: cmake
