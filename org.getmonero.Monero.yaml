@@ -22,115 +22,10 @@ cleanup:
 
 command: monero-wallet-gui
 modules:
-  - shared-modules/libusb/libusb.json
-
-  - name: boost
-    buildsystem: simple
-    build-commands:
-      - ./bootstrap.sh --prefix=$FLATPAK_DEST --with-libraries=chrono,date_time,filesystem,locale,program_options,regex,serialization,system,thread
-      - ./b2 headers
-      - ./b2 -j$FLATPAK_BUILDER_N_JOBS install variant=release --layout=system
-    sources:
-      - type: archive
-        url: https://boostorg.jfrog.io/artifactory/main/release/1.79.0/source/boost_1_79_0.tar.gz
-        sha256: 273f1be93238a068aba4f9735a4a2b003019af067b9c183ed227780b8f36062c
-
-  - name: protobuf
-    sources:
-      - type: archive
-        url: https://github.com/protocolbuffers/protobuf/releases/download/v21.1/protobuf-cpp-3.21.1.tar.gz
-        sha256: 9ccabf07bd087bca3bb37067e04bf1d7377f0d60311cf3d2aa88e7af4c49a177
-
-  - name: ldns
-    cleanup:
-      - /bin
-    sources:
-      - type: archive
-        url: https://nlnetlabs.nl/downloads/ldns/ldns-1.8.1.tar.gz
-        sha256: 958229abce4d3aaa19a75c0d127666564b17216902186e952ca4aef47c6d7fa3
-        x-checker-data:
-          type: html
-          url: https://nlnetlabs.nl/downloads/ldns/
-          pattern: (ldns-([\d\.]+)\.tar\.gz)
-
-  - name: libunbound
-    config-opts:
-      - --with-libunbound-only
-    sources:
-      - type: archive
-        url: https://nlnetlabs.nl/downloads/unbound/unbound-1.16.0.tar.gz
-        sha256: 6701534c938eb019626601191edc6d012fc534c09d2418d5b92827db0cbe48a5
-        x-checker-data:
-          type: html
-          url: https://nlnetlabs.nl/downloads/unbound/
-          pattern: (unbound-([\d\.]+)\.tar\.gz)
-
-  - name: libsodium
-    sources:
-      - type: archive
-        url: https://github.com/jedisct1/libsodium/releases/download/1.0.18-RELEASE/libsodium-1.0.18.tar.gz
-        sha256: 6f504490b342a4f8a4c4a02fc9b866cbef8622d5df4e5452b46be121e46636c1
-        x-checker-data:
-          type: json
-          url: https://api.github.com/repos/jedisct1/libsodium/releases/latest
-          version-query: .name
-          url-query: |
-            .assets | map(select(.name=="libsodium-\($version).tar.gz")) | first | .browser_download_url
-
-  - name: hidapi
-    buildsystem: cmake
-    sources:
-      - type: archive
-        url: https://github.com/libusb/hidapi/archive/hidapi-0.12.0.tar.gz
-        sha256: 28ec1451f0527ad40c1a4c92547966ffef96813528c8b184a665f03ecbb508bc
-
-  - name: openpgm
-    subdir: openpgm/pgm
-    sources:
-      - type: archive
-        url: https://github.com/steve-o/openpgm/archive/release-5-3-128.tar.gz
-        sha256: 8d707ef8dda45f4a7bc91016d7f2fed6a418637185d76c7ab30b306499c6d393
-      - type: patch
-        path: openpgm-fix-build.patch
-
-  - name: libzmq
-    config-opts:
-      - --with-pgm
-      - --with-libsodium
-      - --disable-Werror
-    sources:
-      - type: archive
-        url: https://github.com/zeromq/libzmq/releases/download/v4.3.4/zeromq-4.3.4.tar.gz
-        sha256: c593001a89f5a85dd2ddf564805deb860e02471171b3f204944857336295c3e5
-
-  - name: libgss
-    sources:
-      - type: archive
-        url: https://ftp.gnu.org/gnu/gss/gss-1.0.3.tar.gz
-        sha256: ff919ddc731531d65e27d7ababdc361aae05ada5f1a6dd60703d153307dcdeeb
-
-  - name: libuv
-    buildsystem: cmake
-    sources:
-      - type: archive
-        url: https://github.com/libuv/libuv/archive/v1.44.1.tar.gz
-        sha256: e91614e6dc2dd0bfdd140ceace49438882206b7a6fb00b8750914e67a9ed6d6b
-
-  - name: p2pool
-    buildsystem: cmake
-    sources:
-      - type: git
-        url: https://github.com/SChernykh/p2pool
-        tag: v2.0
-        commit: 8aebcdc580c424903221c95ebe2304a2e48b01b8
-    post-install:
-      - install -Dm755 p2pool /app/bin/p2pool
-
   - name: monero-gui
     buildsystem: cmake
     config-opts:
       - -DCMAKE_BUILD_TYPE=Release
-      - -DWITH_DESKTOP_ENTRY=OFF
     build-options:
       arch:
         aarch64:
@@ -150,13 +45,121 @@ modules:
           version-query: .tag_name
           url-query: '"https://downloads.getmonero.org/gui/monero-gui-source-" + $version
             + ".tar.bz2"'
+    modules:
+      - shared-modules/libusb/libusb.json
+
+      - name: boost
+        buildsystem: simple
+        build-commands:
+          - ./bootstrap.sh --prefix=$FLATPAK_DEST --with-libraries=chrono,date_time,filesystem,locale,program_options,regex,serialization,system,thread
+          - ./b2 headers
+          - ./b2 -j$FLATPAK_BUILDER_N_JOBS install variant=release --layout=system
+        sources:
+          - type: archive
+            url: https://boostorg.jfrog.io/artifactory/main/release/1.79.0/source/boost_1_79_0.tar.gz
+            sha256: 273f1be93238a068aba4f9735a4a2b003019af067b9c183ed227780b8f36062c
+
+      - name: protobuf
+        sources:
+          - type: archive
+            url: https://github.com/protocolbuffers/protobuf/releases/download/v21.1/protobuf-cpp-3.21.1.tar.gz
+            sha256: 9ccabf07bd087bca3bb37067e04bf1d7377f0d60311cf3d2aa88e7af4c49a177
+
+      - name: ldns
+        sources:
+          - type: archive
+            url: https://nlnetlabs.nl/downloads/ldns/ldns-1.8.1.tar.gz
+            sha256: 958229abce4d3aaa19a75c0d127666564b17216902186e952ca4aef47c6d7fa3
+            x-checker-data:
+              type: html
+              url: https://nlnetlabs.nl/downloads/ldns/
+              pattern: (ldns-([\d\.]+)\.tar\.gz)
+        cleanup:
+          - /bin
+
+      - name: libunbound
+        config-opts:
+          - --with-libunbound-only
+        sources:
+          - type: archive
+            url: https://nlnetlabs.nl/downloads/unbound/unbound-1.16.0.tar.gz
+            sha256: 6701534c938eb019626601191edc6d012fc534c09d2418d5b92827db0cbe48a5
+            x-checker-data:
+              type: html
+              url: https://nlnetlabs.nl/downloads/unbound/
+              pattern: (unbound-([\d\.]+)\.tar\.gz)
+
+      - name: libsodium
+        sources:
+          - type: archive
+            url: https://github.com/jedisct1/libsodium/releases/download/1.0.18-RELEASE/libsodium-1.0.18.tar.gz
+            sha256: 6f504490b342a4f8a4c4a02fc9b866cbef8622d5df4e5452b46be121e46636c1
+            x-checker-data:
+              type: json
+              url: https://api.github.com/repos/jedisct1/libsodium/releases/latest
+              version-query: .name
+              url-query: |
+                .assets | map(select(.name=="libsodium-\($version).tar.gz")) | first | .browser_download_url
+
+      - name: hidapi
+        buildsystem: cmake
+        config-opts:
+          - -DCMAKE_BUILD_TYPE=Release
+        sources:
+          - type: archive
+            url: https://github.com/libusb/hidapi/archive/hidapi-0.12.0.tar.gz
+            sha256: 28ec1451f0527ad40c1a4c92547966ffef96813528c8b184a665f03ecbb508bc
+
+      - name: openpgm
+        subdir: openpgm/pgm
+        sources:
+          - type: archive
+            url: https://github.com/steve-o/openpgm/archive/release-5-3-128.tar.gz
+            sha256: 8d707ef8dda45f4a7bc91016d7f2fed6a418637185d76c7ab30b306499c6d393
+          - type: patch
+            path: openpgm-fix-build.patch
+
+      - name: libzmq
+        config-opts:
+          - --with-pgm
+          - --with-libsodium
+          - --disable-Werror
+        sources:
+          - type: archive
+            url: https://github.com/zeromq/libzmq/releases/download/v4.3.4/zeromq-4.3.4.tar.gz
+            sha256: c593001a89f5a85dd2ddf564805deb860e02471171b3f204944857336295c3e5
+
+  - name: p2pool
+    buildsystem: cmake
+    config-opts:
+      - -DCMAKE_BUILD_TYPE=Release
+    sources:
+      - type: git
+        url: https://github.com/SChernykh/p2pool
+        tag: v2.0
+        commit: 8aebcdc580c424903221c95ebe2304a2e48b01b8
+    post-install:
+       - install -Dm755 p2pool $FLATPAK_DEST/bin/p2pool
+    modules:
+      - name: libgss
+        sources:
+          - type: archive
+            url: https://ftp.gnu.org/gnu/gss/gss-1.0.3.tar.gz
+            sha256: ff919ddc731531d65e27d7ababdc361aae05ada5f1a6dd60703d153307dcdeeb
+
+      - name: libuv
+        buildsystem: cmake
+        sources:
+          - type: archive
+            url: https://github.com/libuv/libuv/archive/v1.44.1.tar.gz
+            sha256: e91614e6dc2dd0bfdd140ceace49438882206b7a6fb00b8750914e67a9ed6d6b
 
   - name: monero-extra
     buildsystem: simple
     build-commands:
-      - install -Dpm644 org.getmonero.Monero.desktop /app/share/applications/org.getmonero.Monero.desktop
-      - install -Dpm644 org.getmonero.Monero.svg /app/share/icons/hicolor/scalable/apps/org.getmonero.Monero.svg
-      - install -Dpm644 org.getmonero.Monero.metainfo.xml /app/share/metainfo/org.getmonero.Monero.metainfo.xml
+      - install -Dpm644 org.getmonero.Monero.desktop $FLATPAK_DEST/share/applications/$FLATPAK_ID.desktop
+      - install -Dpm644 org.getmonero.Monero.svg $FLATPAK_DEST/share/icons/hicolor/scalable/apps/$FLATPAK_ID.svg
+      - install -Dpm644 org.getmonero.Monero.metainfo.xml $FLATPAK_DEST/share/metainfo/$FLATPAK_ID.metainfo.xml
     sources:
       - type: file
         path: extra/org.getmonero.Monero.desktop
