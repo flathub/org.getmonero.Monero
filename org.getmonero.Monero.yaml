@@ -136,10 +136,13 @@ modules:
     sources:
       - type: git
         url: https://github.com/SChernykh/p2pool
-        tag: v2.1
-        commit: 9a5be0a32117836d3adebdbc7befb3c0ea56c885
+        tag: v2.2
+        commit: c5ea4dca677ec9a1f8963f6fa5016b2682b52d09
+        x-checker-data:
+          type: git
+          tag-pattern: ^v([\d.]+)$
     post-install:
-       - install -Dm755 p2pool $FLATPAK_DEST/bin/p2pool
+      - install -Dm755 p2pool $FLATPAK_DEST/bin/p2pool
     modules:
       - name: libgss
         sources:
