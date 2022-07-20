@@ -50,6 +50,24 @@
     <url type="bugtracker">https://github.com/monero-project/monero-gui/issues</url>
 
     <releases>
+        <release version="0.18.0.0" date="2022-07-20">
+            <description>
+                <ul>
+                    <li>Add support for v0.18 network upgrade (#3972)</li>
+                    <li>Add scan transaction option (#3932)</li>
+                    <li>Fix payment proof button (#3910)</li>
+                    <li>Fix restoring from default restore height (#3902)</li>
+                    <li>Display wallet files with a dot in name #3968)</li>
+                    <li>Add separate Ledger Nano S+ entry (#3903)</li>
+                    <li>Fix stagenet approximated block height (#3846)</li>
+                    <li>Update Mac icon (#3560)</li>
+                    <li>Update p2pool to v2.2.1 (#3966)</li>
+                    <li>Only kill p2pool when we started it (#3917)</li>
+                    <li>Minor bug fixes and UI improvements</li>
+                </ul>
+            </description>
+        </release>
+
         <release version="0.17.3.2" date="2022-04-30">
             <description>
                 <ul>
