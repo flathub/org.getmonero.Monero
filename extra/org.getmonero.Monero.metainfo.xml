@@ -50,6 +50,18 @@
     <url type="bugtracker">https://github.com/monero-project/monero-gui/issues</url>
 
     <releases>
+        <release version="0.18.1.0" date="2022-08-11">
+            <description>
+                <ul>
+                    <li>Add Ledger support for v0.18, requires app v1.8.0</li>
+                    <li>Add Trezor support for v0.18, requires firmware v2.5.2</li>
+                    <li>Speed up time between wallet opening and refresh (#3994)</li>
+                    <li>Add option to skip stop local node screen (#3734)</li>
+                    <li>Minor bug fixes and UI improvements</li>
+                </ul>
+            </description>
+        </release>
+
         <release version="0.18.0.0" date="2022-07-20">
             <description>
                 <ul>
