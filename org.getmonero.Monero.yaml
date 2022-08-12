@@ -67,18 +67,6 @@ modules:
             url: https://github.com/protocolbuffers/protobuf/releases/download/v21.3/protobuf-cpp-3.21.3.tar.gz
             sha256: c98a4f17ed57e9e4dafc4a52e76ee012f9a6a13750488b20b4c370a3eb1561fc
 
-      - name: ldns
-        sources:
-          - type: archive
-            url: https://nlnetlabs.nl/downloads/ldns/ldns-1.8.1.tar.gz
-            sha256: 958229abce4d3aaa19a75c0d127666564b17216902186e952ca4aef47c6d7fa3
-            x-checker-data:
-              type: html
-              url: https://nlnetlabs.nl/downloads/ldns/
-              pattern: (ldns-([\d\.]+)\.tar\.gz)
-        cleanup:
-          - /bin
-
       - name: libunbound
         config-opts:
           - --with-libunbound-only
