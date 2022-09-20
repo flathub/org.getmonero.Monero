@@ -50,6 +50,19 @@
     <url type="bugtracker">https://github.com/monero-project/monero-gui/issues</url>
 
     <releases>
+        <release version="0.18.1.1" date="2022-09-19">
+            <description>
+                <ul>
+                    <li>Skip nodes that are behind last checkpoint in Simple Mode</li>
+                    <li>Warn when connecting to an outdated node</li>
+                    <li>Update Qt to 5.15.6 on Windows and Linux (#4025)</li>
+                    <li>Allow to use Windows Installer on ARM64 systems (#4026)</li>
+                    <li>Update translations (#4031)</li>
+                    <li>Minor bug fixes and UI improvements</li>
+                </ul>
+            </description>
+        </release>
+
         <release version="0.18.1.0" date="2022-08-11">
             <description>
                 <ul>
