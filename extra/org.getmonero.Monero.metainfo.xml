@@ -50,6 +50,17 @@
     <url type="bugtracker">https://github.com/monero-project/monero-gui/issues</url>
 
     <releases>
+        <release version="0.18.1.2" date="2022-09-29">
+            <description>
+                <ul>
+                    <li>Fix a bug that causes the wallet to display "wrong version"</li>
+                    <li>Improve behavior when switching nodes (#4036)</li>
+                    <li>Use different colors for different subaccounts (#4040)</li>
+                    <li>Minor bug fixes and UI improvements</li>
+                </ul>
+            </description>
+        </release>
+
         <release version="0.18.1.1" date="2022-09-19">
             <description>
                 <ul>
