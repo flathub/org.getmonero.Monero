@@ -120,8 +120,8 @@ modules:
     sources:
       - type: git
         url: https://github.com/SChernykh/p2pool
-        tag: v2.6
-        commit: 67bbfea87d87328a9ccd8159b21b2a4ff65087ca
+        tag: v2.7
+        commit: 2b61c1d90f892912981619aa65191c81206d275e
         x-checker-data:
           type: git
           tag-pattern: ^v([\d.]+)$
