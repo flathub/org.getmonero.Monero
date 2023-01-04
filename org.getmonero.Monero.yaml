@@ -39,8 +39,8 @@ modules:
             - -DARCH=default
     sources:
       - type: archive
-        url: https://downloads.getmonero.org/gui/monero-gui-source-v0.18.1.2.tar.bz2
-        sha256: 29e805d4f97c213d03ab2c9279708d297b0ddf7f5a3f6abe05fb5a7f1c453ff7
+        url: https://downloads.getmonero.org/gui/monero-gui-source-v0.18.1.1.tar.bz2
+        sha256: 416dbe7ffb9b1954f373a96ed5e763ccf4f8f40c9057717a979ac9ca21006c3b
         x-checker-data:
           type: json
           url: https://api.github.com/repos/monero-project/monero-gui/releases/latest
