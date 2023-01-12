@@ -40,7 +40,7 @@ modules:
     sources:
       - type: git
         url: https://github.com/monero-project/monero-gui.git
-        commit: 48393db2c75bd306e7d7f5cd2c226880a5eb0386
+        commit: b7ba9437d8cca6df4ecff7f5ae38a53cac5e26b2
     modules:
       - shared-modules/libusb/libusb.json
 
