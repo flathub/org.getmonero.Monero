@@ -128,10 +128,11 @@ modules:
       - type: git
         url: https://github.com/SChernykh/p2pool
 #        tag: v3.0
-        commit: 02970e2f8f5ec76af768ae77aa21b436799299ba
+        commit: e64a0acfb37961e0a3b185a6de04ab92bacbbf24
         x-checker-data:
           type: git
           tag-pattern: ^v([\d.]+)$
+        tag: v3.0
     post-install:
       - install -Dm755 p2pool $FLATPAK_DEST/bin/p2pool
     modules:
