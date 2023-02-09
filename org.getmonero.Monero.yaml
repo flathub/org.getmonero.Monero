@@ -117,6 +117,7 @@ modules:
     buildsystem: cmake
     config-opts:
       - -DCMAKE_BUILD_TYPE=Release
+      - -DWITH_LTO=OFF
     sources:
       - type: git
         url: https://github.com/SChernykh/p2pool
