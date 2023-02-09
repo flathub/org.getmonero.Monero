@@ -117,11 +117,12 @@ modules:
     buildsystem: cmake
     config-opts:
       - -DCMAKE_BUILD_TYPE=Release
+      - -DWITH_LTO=OFF
     sources:
       - type: git
         url: https://github.com/SChernykh/p2pool
-        tag: v2.7
-        commit: 2b61c1d90f892912981619aa65191c81206d275e
+#        tag: v3.0
+        commit: 02970e2f8f5ec76af768ae77aa21b436799299ba
         x-checker-data:
           type: git
           tag-pattern: ^v([\d.]+)$
