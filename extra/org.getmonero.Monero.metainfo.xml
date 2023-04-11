@@ -50,6 +50,16 @@
     <url type="bugtracker">https://github.com/monero-project/monero-gui/issues</url>
 
     <releases>
+        <release version="0.18.2.2" date="2023-04-10">
+            <description>
+                <ul>
+                    <li>Add support for Ledger Stax (#4130)</li>
+                    <li>Update p2pool to v3.2 (#4142)</li>
+                    <li>Minor bug fixes and UI improvements</li>
+                </ul>
+            </description>
+        </release>
+
         <release version="0.18.2.0" date="2023-03-01">
             <description>
                 <ul>
@@ -65,7 +75,7 @@
                     <li>Skip proxy when setting localhost remote node (#4085)</li>
                     <li>Override desktop theming to fix UI bugs with KDE (#4091)</li>
                     <li>P2Pool: restart monerod only when needed and with proper args (#3936)</li>
-                    <li>P2Pool: restart monerod only when needed and with proper args (#3936)</li>
+                    <li>Minor bug fixes and UI improvements</li>
                 </ul>
             </description>
         </release>
