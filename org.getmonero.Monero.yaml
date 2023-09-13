@@ -82,8 +82,8 @@ modules:
       - name: libsodium
         sources:
           - type: archive
-            url: https://github.com/jedisct1/libsodium/releases/download/1.0.18-RELEASE/libsodium-1.0.18.tar.gz
-            sha256: 6f504490b342a4f8a4c4a02fc9b866cbef8622d5df4e5452b46be121e46636c1
+            url: https://github.com/jedisct1/libsodium/releases/download/1.0.19-RELEASE/libsodium-1.0.19.tar.gz
+            sha256: b8abea95ea00a22d63b1634c5f2c9c1316715b9cac6ea63168d5e962b89a197b
             x-checker-data:
               type: json
               url: https://api.github.com/repos/jedisct1/libsodium/releases/latest
@@ -127,8 +127,8 @@ modules:
     sources:
       - type: git
         url: https://github.com/SChernykh/p2pool
-        tag: v3.6.1
-        commit: fcf9d2ad15009fcd3c744b2bf3a946e6c669aadc
+        tag: v3.6.2
+        commit: 1ef88622d6fd2b2fb30c4f682ca471b696e62dff
         x-checker-data:
           type: git
           tag-pattern: ^v([\d.]+)$
