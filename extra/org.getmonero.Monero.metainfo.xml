@@ -50,6 +50,20 @@
     <url type="bugtracker">https://github.com/monero-project/monero-gui/issues</url>
 
     <releases>
+        <release version="0.18.3.1" date="2023-10-11">
+            <description>
+                <ul>
+                    <li>Add macOS ARM support</li>
+                    <li>Display error when Scan Transaction is used on older tx via untrusted daemon (#4051)</li>
+                    <li>Add image when Ledger Stax is selected in wizard (#4146)</li>
+                    <li>Add more detailed P2Pool failure messages, fix a rare crash (#4147)</li>
+                    <li>Update Qt to 5.15.10 (#4143)</li>
+                    <li>Update p2pool to v3.7 (#4219)</li>
+                    <li>Minor bug fixes and UI improvements</li>
+                </ul>
+            </description>
+        </release>
+
         <release version="0.18.2.2" date="2023-04-10">
             <description>
                 <ul>
