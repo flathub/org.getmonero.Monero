@@ -23,7 +23,7 @@ cleanup:
 command: monero-wallet-gui
 modules:
   - name: monero-gui
-    buildsystem: cmake
+    buildsystem: cmake-ninja
     config-opts:
       - -DCMAKE_BUILD_TYPE=Release
       - -DWITH_DESKTOP_ENTRY=OFF
@@ -52,14 +52,20 @@ modules:
           - ./b2 -j$FLATPAK_BUILDER_N_JOBS install variant=release --layout=system
         sources:
           - type: archive
-            url: https://boostorg.jfrog.io/artifactory/main/release/1.79.0/source/boost_1_79_0.tar.gz
-            sha256: 273f1be93238a068aba4f9735a4a2b003019af067b9c183ed227780b8f36062c
+            url: https://boostorg.jfrog.io/artifactory/main/release/1.84.0/source/boost_1_84_0.tar.gz
+            sha256: a5800f405508f5df8114558ca9855d2640a2de8f0445f051fa1c7c3383045724
 
       - name: protobuf
+        buildsystem: cmake-ninja
+        config-opts:
+          - -DCMAKE_BUILD_TYPE=Release
+          - -Dprotobuf_BUILD_LIBPROTOC=ON
+          - -Dprotobuf_BUILD_SHARED_LIBS=ON
         sources:
-          - type: archive
-            url: https://github.com/protocolbuffers/protobuf/releases/download/v21.3/protobuf-cpp-3.21.3.tar.gz
-            sha256: c98a4f17ed57e9e4dafc4a52e76ee012f9a6a13750488b20b4c370a3eb1561fc
+          - type: git
+            url: https://github.com/protocolbuffers/protobuf
+            tag: v25.2
+            commit: a9b006bddd52e289029f16aa77b77e8e0033d9ee
 
       - name: libunbound
         config-opts:
@@ -86,13 +92,13 @@ modules:
                 .assets | map(select(.name=="libsodium-\($version).tar.gz")) | first | .browser_download_url
 
       - name: hidapi
-        buildsystem: cmake
+        buildsystem: cmake-ninja
         config-opts:
           - -DCMAKE_BUILD_TYPE=Release
         sources:
           - type: archive
-            url: https://github.com/libusb/hidapi/archive/hidapi-0.12.0.tar.gz
-            sha256: 28ec1451f0527ad40c1a4c92547966ffef96813528c8b184a665f03ecbb508bc
+            url: https://github.com/libusb/hidapi/archive/hidapi-0.14.0.tar.gz
+            sha256: a5714234abe6e1f53647dd8cba7d69f65f71c558b7896ed218864ffcf405bcbd
 
       - name: openpgm
         subdir: openpgm/pgm
@@ -110,11 +116,11 @@ modules:
           - --disable-Werror
         sources:
           - type: archive
-            url: https://github.com/zeromq/libzmq/releases/download/v4.3.4/zeromq-4.3.4.tar.gz
-            sha256: c593001a89f5a85dd2ddf564805deb860e02471171b3f204944857336295c3e5
+            url: https://github.com/zeromq/libzmq/releases/download/v4.3.5/zeromq-4.3.5.tar.gz
+            sha256: 6653ef5910f17954861fe72332e68b03ca6e4d9c7160eb3a8de5a5a913bfab43
 
   - name: p2pool
-    buildsystem: cmake
+    buildsystem: cmake-ninja
     config-opts:
       - -DCMAKE_BUILD_TYPE=Release
       - -DWITH_LTO=OFF
@@ -136,11 +142,11 @@ modules:
             sha256: ff919ddc731531d65e27d7ababdc361aae05ada5f1a6dd60703d153307dcdeeb
 
       - name: libuv
-        buildsystem: cmake
+        buildsystem: cmake-ninja
         sources:
           - type: archive
-            url: https://github.com/libuv/libuv/archive/v1.44.1.tar.gz
-            sha256: e91614e6dc2dd0bfdd140ceace49438882206b7a6fb00b8750914e67a9ed6d6b
+            url: https://github.com/libuv/libuv/archive/v1.47.0.tar.gz
+            sha256: d50af7e6d72526db137e66fad812421c8a1cae09d146b0ec2bb9a22c5f23ba93
 
   - name: monero-extra
     buildsystem: simple
