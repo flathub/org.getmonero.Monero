@@ -41,6 +41,14 @@ modules:
       - type: git
         url: https://github.com/monero-project/monero-gui.git
         commit: dc3441f2586fdc91287f1f788a6885d1247850e6
+      - type: file
+        path: extra/org.getmonero.Monero.desktop
+      - type: file
+        path: extra/org.getmonero.Monero.metainfo.xml
+    post-install:
+      - install -Dpm644 org.getmonero.Monero.desktop $FLATPAK_DEST/share/applications/$FLATPAK_ID.desktop
+      - install -Dpm644 org.getmonero.Monero.metainfo.xml $FLATPAK_DEST/share/metainfo/$FLATPAK_ID.metainfo.xml
+      - for x in 16 24 32 48 64 96 128 256; do install -Dpm644 images/appicons/${x}x${x}.png $FLATPAK_DEST/share/icons/hicolor/${x}x${x}/apps/$FLATPAK_ID.png; done
     modules:
       - shared-modules/libusb/libusb.json
 
@@ -142,16 +150,3 @@ modules:
             url: https://github.com/libuv/libuv/archive/v1.47.0.tar.gz
             sha256: d50af7e6d72526db137e66fad812421c8a1cae09d146b0ec2bb9a22c5f23ba93
 
-  - name: monero-extra
-    buildsystem: simple
-    build-commands:
-      - install -Dpm644 org.getmonero.Monero.desktop $FLATPAK_DEST/share/applications/$FLATPAK_ID.desktop
-      - install -Dpm644 org.getmonero.Monero.svg $FLATPAK_DEST/share/icons/hicolor/scalable/apps/$FLATPAK_ID.svg
-      - install -Dpm644 org.getmonero.Monero.metainfo.xml $FLATPAK_DEST/share/metainfo/$FLATPAK_ID.metainfo.xml
-    sources:
-      - type: file
-        path: extra/org.getmonero.Monero.desktop
-      - type: file
-        path: extra/org.getmonero.Monero.svg
-      - type: file
-        path: extra/org.getmonero.Monero.metainfo.xml
