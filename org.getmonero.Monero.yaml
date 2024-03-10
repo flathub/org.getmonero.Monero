@@ -39,8 +39,8 @@ modules:
             - -DARCH=default
     sources:
       - type: archive
-        url: https://downloads.getmonero.org/gui/monero-gui-source-v0.18.3.1.tar.bz2
-        sha256: 045a84e343423a62ed617f200465b290267ff0a071375fdfc49ea02dcdb1a785
+        url: https://downloads.getmonero.org/gui/monero-gui-source-v0.18.3.2.tar.bz2
+        sha256: 0a94dce72969fbebe43b46038ecd8c5df0166278c4f50fa7fece67ba51d2554b
         x-checker-data:
           type: json
           url: https://api.github.com/repos/monero-project/monero-gui/releases/latest
@@ -54,7 +54,8 @@ modules:
     post-install:
       - install -Dpm644 org.getmonero.Monero.desktop $FLATPAK_DEST/share/applications/$FLATPAK_ID.desktop
       - install -Dpm644 org.getmonero.Monero.metainfo.xml $FLATPAK_DEST/share/metainfo/$FLATPAK_ID.metainfo.xml
-      - for x in 16 24 32 48 64 96 128 256; do install -Dpm644 images/appicons/${x}x${x}.png $FLATPAK_DEST/share/icons/hicolor/${x}x${x}/apps/$FLATPAK_ID.png; done
+      - for x in 16 24 32 48 64 96 128 256; do install -Dpm644 images/appicons/${x}x${x}.png
+        $FLATPAK_DEST/share/icons/hicolor/${x}x${x}/apps/$FLATPAK_ID.png; done
     modules:
       - shared-modules/libusb/libusb.json
 
