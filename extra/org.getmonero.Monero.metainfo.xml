@@ -4,7 +4,9 @@
     <metadata_license>CC0-1.0</metadata_license>
     <project_license>BSD-3-Clause</project_license>
     <content_rating type="oars-1.1"/>
-    <developer_name>The Monero Project</developer_name>
+    <developer id="org.getmonero">
+      <name>The Monero Project</name>
+    </developer>
     <categories>
         <category>Network</category>
         <category>Qt</category>
