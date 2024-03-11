@@ -43,7 +43,7 @@
 
     <screenshots>
         <screenshot type="default">
-            <caption>A screenshot of the Monero GUI wallet. The navigation menu is on the left.</caption>
+            <caption>A screenshot of the Monero GUI wallet</caption>
             <image>https://raw.githubusercontent.com/monero-project/monero-site/master/img/downloads/gui.png</image>
         </screenshot>
     </screenshots>
@@ -52,6 +52,21 @@
     <url type="bugtracker">https://github.com/monero-project/monero-gui/issues</url>
 
     <releases>
+        <release version="0.18.3.2" date="2024-03-10">
+            <description>
+                <ul>
+                    <li>Fix automatic fee selection (#4283)</li>
+                    <li>Add support for Trezor Safe 3 (#4255)</li>
+                    <li>OpenAlias domains starting with a digit can now be recognized (#4243)</li>
+                    <li>Fix Tails detection (#4281)</li>
+                    <li>Fix a crash on macOS ARM (#4283)</li>
+                    <li>Update Qt to 5.15.12 (#4261)</li>
+                    <li>Update p2pool to v3.8 (#4260)</li>
+                    <li>Minor bug fixes and UI improvements</li>
+                </ul>
+            </description>
+        </release>
+
         <release version="0.18.3.1" date="2023-10-11">
             <description>
                 <ul>
