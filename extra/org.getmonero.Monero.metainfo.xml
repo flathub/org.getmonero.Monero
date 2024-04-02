@@ -52,6 +52,15 @@
     <url type="bugtracker">https://github.com/monero-project/monero-gui/issues</url>
 
     <releases>
+        <release version="0.18.3.3" date="2024-04-02">
+            <description>
+                <ul>
+                    <li>Fix fix connecting to password protected nodes (#4291)</li>
+                    <li>Update Qt to 5.15.13 (#4290)</li>
+                </ul>
+            </description>
+        </release>
+
         <release version="0.18.3.2" date="2024-03-10">
             <description>
                 <ul>
