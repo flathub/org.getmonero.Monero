@@ -52,6 +52,20 @@
     <url type="bugtracker">https://github.com/monero-project/monero-gui/issues</url>
 
     <releases>
+        <release version="0.18.3.4" date="2024-08-22">
+            <description>
+                <ul>
+                    <li>Add support for Trezor Safe 5 (#4332)</li>
+                    <li>Enable pruning by default (#4320)</li>
+                    <li>Allow @ in OpenAlias domain (#4308)</li>
+                    <li>Fix stagenet restore height estimation (#4310)</li>
+                    <li>Fix an edge case with desktop entry (#4300)</li>
+                    <li>Update P2Pool to v4.1 (#4334)</li>
+                    <li>Update Qt to 5.15.14 (#4321)</li>
+                </ul>
+            </description>
+        </release>
+
         <release version="0.18.3.3" date="2024-04-02">
             <description>
                 <ul>
