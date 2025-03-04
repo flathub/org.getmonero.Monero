@@ -8,7 +8,7 @@ finish-args:
   - --socket=x11
   - --socket=wayland
   - --device=all
-  - --filesystem=~/Monero:create
+  - --persist=Monero
   - --persist=.bitmonero
 
 cleanup:
