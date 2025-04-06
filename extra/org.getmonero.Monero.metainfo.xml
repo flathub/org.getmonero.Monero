@@ -52,6 +52,17 @@
     <url type="bugtracker">https://github.com/monero-project/monero-gui/issues</url>
 
     <releases>
+        <release version="0.18.4.0" date="2025-04-06">
+            <description>
+                <ul>
+                    <li>Fix "Create Wallet" button getting stuck in some cases (#4351)</li>
+                    <li>Fix testnet wallet detection (#4411)</li>
+                    <li>Update P2Pool to v4.4 (#4417)</li>
+                    <li>Update Qt to 5.15.16 (#4377)</li>
+                </ul>
+            </description>
+        </release>
+
         <release version="0.18.3.4" date="2024-08-22">
             <description>
                 <ul>
