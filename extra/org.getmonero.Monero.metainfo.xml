@@ -52,6 +52,15 @@
     <url type="bugtracker">https://github.com/monero-project/monero-gui/issues</url>
 
     <releases>
+        <release version="0.18.4.1" date="2025-07-25">
+            <description>
+                <ul>
+                    <li>Update P2Pool to v4.8.1 (#4462)</li>
+                    <li>Minor bug fixes</li>
+                </ul>
+            </description>
+        </release>
+        
         <release version="0.18.4.0" date="2025-04-06">
             <description>
                 <ul>
