@@ -14,7 +14,7 @@ finish-args:
 cleanup:
   - /include
   - /etc
-  - /share/man
+  - /share/man10a184db8b242d4cff97e0f5845342cfccfc2042
   - /lib/pkgconfig
   - /lib/cmake
   - '*.a'
@@ -40,7 +40,7 @@ modules:
     sources:
       - type: git
         url: https://github.com/monero-project/monero-gui.git
-        commit: 24b4e0209f6e668ca6dad12f76f0f9ec8bdfd8c7
+        commit: 10a184db8b242d4cff97e0f5845342cfccfc2042
       - type: file
         path: extra/org.getmonero.Monero.desktop
       - type: file
