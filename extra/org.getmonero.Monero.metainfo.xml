@@ -5,7 +5,7 @@
     <project_license>BSD-3-Clause</project_license>
     <content_rating type="oars-1.1"/>
     <developer id="org.getmonero">
-      <name>The Monero Project</name>
+        <name>The Monero Project</name>
     </developer>
     <categories>
         <category>Network</category>
@@ -15,7 +15,7 @@
     </categories>
     <name>Monero GUI</name>
     <summary>Monero: the secure, private, untraceable cryptocurrency</summary>
-    
+
     <description>
         <p>Monero is a private, secure, untraceable, decentralised digital currency. You
             are your bank, you control your funds, and nobody can trace your transfers
@@ -48,8 +48,13 @@
         </screenshot>
     </screenshots>
 
-    <url type="homepage">https://getmonero.org/</url>
+    <url type="homepage">https://getmonero.org</url>
     <url type="bugtracker">https://github.com/monero-project/monero-gui/issues</url>
+    <url type="donation">https://getmonero.org/get-started/contributing</url>
+    <url type="faq">https://getmonero.org/get-started/faq</url>
+    <url type="help">https://getmonero.org/resources/user-guides</url>
+    <url type="contact">https://getmonero.org/community/hangouts</url>
+    <url type="contribute">https://getmonero.org/get-started/contributing</url>
 
     <releases>
         <release version="0.18.4.1" date="2025-07-25">
@@ -153,7 +158,7 @@
                 </ul>
             </description>
         </release>
-        
+
         <release version="0.18.1.2" date="2022-09-29">
             <description>
                 <ul>

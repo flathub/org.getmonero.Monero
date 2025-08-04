@@ -5,16 +5,18 @@ sdk: org.kde.Sdk
 finish-args:
   - --share=network
   - --share=ipc
-  - --socket=x11
+  # Trying to force Wayland
+  - --socket=fallback-x11
   - --socket=wayland
   - --device=all
   - --persist=Monero
   - --persist=.bitmonero
+  - --persist=.p2pool
 
 cleanup:
   - /include
   - /etc
-  - /share/man10a184db8b242d4cff97e0f5845342cfccfc2042
+  - /share/man
   - /lib/pkgconfig
   - /lib/cmake
   - '*.a'
@@ -60,14 +62,17 @@ modules:
           - ./b2 -j$FLATPAK_BUILDER_N_JOBS install variant=release --layout=system
         sources:
           - type: archive
-            url: https://archives.boost.io/release/1.84.0/source/boost_1_84_0.tar.gz
-            sha256: a5800f405508f5df8114558ca9855d2640a2de8f0445f051fa1c7c3383045724
+            url: https://archives.boost.io/release/1.88.0/source/boost_1_88_0.tar.gz
+            sha256: 3621533e820dcab1e8012afd583c0c73cf0f77694952b81352bf38c1488f9cb4
 
       - name: protobuf
+        buildsystem: cmake-ninja
+        config-opts:
+          - -Dprotobuf_BUILD_TESTS=OFF
         sources:
           - type: archive
-            url: https://github.com/protocolbuffers/protobuf/releases/download/v21.3/protobuf-cpp-3.21.3.tar.gz
-            sha256: c98a4f17ed57e9e4dafc4a52e76ee012f9a6a13750488b20b4c370a3eb1561fc
+            url: https://github.com/protocolbuffers/protobuf/releases/download/v31.1/protobuf-31.1.tar.gz
+            sha256: 12bfd76d27b9ac3d65c00966901609e020481b9474ef75c7ff4601ac06fa0b82
 
       - name: libunbound
         config-opts:
@@ -76,22 +81,12 @@ modules:
           - type: archive
             url: https://nlnetlabs.nl/downloads/unbound/unbound-1.23.1.tar.gz
             sha256: 6a6b117c799d8de3868643397e0fd71591f6d42f4473f598bdb22609ff362590
-            x-checker-data:
-              type: html
-              url: https://nlnetlabs.nl/downloads/unbound/
-              pattern: (unbound-([\d\.]+)\.tar\.gz)
 
       - name: libsodium
         sources:
           - type: archive
             url: https://github.com/jedisct1/libsodium/releases/download/1.0.20-RELEASE/libsodium-1.0.20.tar.gz
             sha256: ebb65ef6ca439333c2bb41a0c1990587288da07f6c7fd07cb3a18cc18d30ce19
-            x-checker-data:
-              type: json
-              url: https://api.github.com/repos/jedisct1/libsodium/releases/latest
-              version-query: .name
-              url-query: |
-                .assets | map(select(.name=="libsodium-\($version).tar.gz")) | first | .browser_download_url
 
       - name: hidapi
         buildsystem: cmake-ninja
@@ -99,21 +94,11 @@ modules:
           - -DCMAKE_BUILD_TYPE=Release
         sources:
           - type: archive
-            url: https://github.com/libusb/hidapi/archive/hidapi-0.14.0.tar.gz
-            sha256: a5714234abe6e1f53647dd8cba7d69f65f71c558b7896ed218864ffcf405bcbd
-
-      - name: openpgm
-        subdir: openpgm/pgm
-        sources:
-          - type: archive
-            url: https://github.com/steve-o/openpgm/archive/release-5-3-128.tar.gz
-            sha256: 8d707ef8dda45f4a7bc91016d7f2fed6a418637185d76c7ab30b306499c6d393
-          - type: patch
-            path: openpgm-fix-build.patch
+            url: https://github.com/libusb/hidapi/archive/hidapi-0.15.0.tar.gz
+            sha256: 5d84dec684c27b97b921d2f3b73218cb773cf4ea915caee317ac8fc73cef8136
 
       - name: libzmq
         config-opts:
-          - --with-pgm
           - --with-libsodium
           - --disable-Werror
         sources:
@@ -131,22 +116,19 @@ modules:
         url: https://github.com/SChernykh/p2pool
         tag: v4.9
         commit: f3d7d6bfe81032c4378088d2aad01f120072bd2d
-        x-checker-data:
-          type: git
-          tag-pattern: ^v([\d.]+)$
     post-install:
       - install -Dm755 p2pool $FLATPAK_DEST/bin/p2pool
     modules:
       - name: libgss
         sources:
           - type: archive
-            url: https://ftp.gnu.org/gnu/gss/gss-1.0.3.tar.gz
-            sha256: ff919ddc731531d65e27d7ababdc361aae05ada5f1a6dd60703d153307dcdeeb
+            url: https://ftp.gnu.org/gnu/gss/gss-1.0.4.tar.gz
+            sha256: ecceabdef4cae3fce7218b2ecb83eb4227dba44b53b61b8c2b2e88ae02419c73
 
       - name: libuv
         buildsystem: cmake-ninja
         sources:
           - type: archive
-            url: https://github.com/libuv/libuv/archive/v1.47.0.tar.gz
-            sha256: d50af7e6d72526db137e66fad812421c8a1cae09d146b0ec2bb9a22c5f23ba93
+            url: https://github.com/libuv/libuv/archive/v1.51.0.tar.gz
+            sha256: 27e55cf7083913bfb6826ca78cde9de7647cded648d35f24163f2d31bb9f51cd
 
