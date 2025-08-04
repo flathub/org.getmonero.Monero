@@ -48,8 +48,13 @@
         </screenshot>
     </screenshots>
 
-    <url type="homepage">https://getmonero.org/</url>
+    <url type="homepage">https://getmonero.org</url>
     <url type="bugtracker">https://github.com/monero-project/monero-gui/issues</url>
+    <url type="donation">https://getmonero.org/get-started/contributing</url>
+    <url type="faq">https://getmonero.org/get-started/faq</url>
+    <url type="help">https://getmonero.org/resources/user-guides</url>
+    <url type="contact">https://getmonero.org/community/hangouts</url>
+    <url type="contribute">https://getmonero.org/get-started/contributing</url>
 
     <releases>
         <release version="0.18.4.1" date="2025-07-25">
