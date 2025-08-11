@@ -73,6 +73,7 @@ modules:
       - name: protobuf
         buildsystem: cmake-ninja
         config-opts:
+          - -DCMAKE_BUILD_TYPE=Release
           - -Dprotobuf_BUILD_TESTS=OFF
         sources:
           - type: archive
@@ -111,8 +112,18 @@ modules:
             url: https://github.com/libusb/hidapi/archive/hidapi-0.15.0.tar.gz
             sha256: 5d84dec684c27b97b921d2f3b73218cb773cf4ea915caee317ac8fc73cef8136
 
+      - name: openpgm
+        subdir: openpgm/pgm
+        sources:
+          - type: archive
+            url: https://github.com/steve-o/openpgm/archive/release-5-3-128.tar.gz
+            sha256: 8d707ef8dda45f4a7bc91016d7f2fed6a418637185d76c7ab30b306499c6d393
+          - type: patch
+            path: extra/openpgm.patch
+
       - name: libzmq
         config-opts:
+          - --with-pgm
           - --with-libsodium
           - --disable-Werror
         sources:

@@ -5,7 +5,7 @@
     <project_license>BSD-3-Clause</project_license>
     <content_rating type="oars-1.1"/>
     <developer id="org.getmonero">
-      <name>The Monero Project</name>
+        <name>The Monero Project</name>
     </developer>
     <categories>
         <category>Network</category>
