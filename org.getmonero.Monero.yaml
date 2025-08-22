@@ -46,7 +46,8 @@ modules:
           type: json
           url: https://api.github.com/repos/monero-project/monero-gui/releases/latest
           version-query: .tag_name
-          url-query: '"https://downloads.getmonero.org/gui/monero-gui-source-" + $version + ".tar.bz2"'
+          url-query: '"https://downloads.getmonero.org/gui/monero-gui-source-" + $version
+            + ".tar.bz2"'
       - type: file
         path: extra/org.getmonero.Monero.desktop
       - type: file
@@ -97,7 +98,8 @@ modules:
               type: json
               url: https://api.github.com/repos/jedisct1/libsodium/releases/latest
               version-query: .name
-              url-query: .assets | map(select(.name=="libsodium-\($version).tar.gz")) | first | .browser_download_url
+              url-query: .assets | map(select(.name=="libsodium-\($version).tar.gz"))
+                | first | .browser_download_url
 
       - name: hidapi
         buildsystem: cmake-ninja
@@ -125,8 +127,8 @@ modules:
     sources:
       - type: git
         url: https://github.com/SChernykh/p2pool
-        tag: v4.9
-        commit: f3d7d6bfe81032c4378088d2aad01f120072bd2d
+        tag: v4.9.1
+        commit: 3c4eeb49fd13c548a9228d2d47f0f9c990339033
         x-checker-data:
           type: git
           tag-pattern: ^v([\d.]+)$
