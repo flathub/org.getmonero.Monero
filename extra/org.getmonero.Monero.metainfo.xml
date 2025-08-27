@@ -57,6 +57,18 @@
     <url type="contribute">https://getmonero.org/get-started/contributing</url>
 
     <releases>
+        <release version="0.18.4.2" date="2025-08-26">
+            <description>
+                <ul>
+                    <li>Fix privacy leak with malicious remote node</li>
+                    <li>Add background sync when locked functionality (#4050)</li>
+                    <li>Update P2Pool to v4.9.1, fix Linux permission bug (#4490)</li>
+                    <li>Add P2Pool nano sidechain (#4482)</li>
+                    <li>Minor bug fixes</li>
+                </ul>
+            </description>
+        </release>
+
         <release version="0.18.4.1" date="2025-07-25">
             <description>
                 <ul>
