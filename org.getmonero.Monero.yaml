@@ -125,8 +125,8 @@ modules:
     sources:
       - type: git
         url: https://github.com/SChernykh/p2pool
-        tag: v4.10
-        commit: bbee372a01c2761f38600438c71753806a11426e
+        tag: v4.10.1
+        commit: 20c39735043e041f1bb1b740b25be7391ec9abaf
     post-install:
       - install -Dm755 p2pool $FLATPAK_DEST/bin/p2pool
     modules:
