@@ -42,7 +42,7 @@ modules:
     sources:
       - type: git
         url: https://github.com/monero-project/monero-gui.git
-        commit: c89f8eca9155473105519c37e706753214534e2a
+        commit: e34c83d7aaf0d6bb9d0293381cb69084f746a26b
       - type: file
         path: extra/org.getmonero.Monero.desktop
       - type: file
