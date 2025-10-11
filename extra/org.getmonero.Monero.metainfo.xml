@@ -57,6 +57,17 @@
     <url type="contribute">https://getmonero.org/get-started/contributing</url>
 
     <releases>
+        <release version="0.18.4.3" date="2025-10-08">
+            <description>
+                <ul>
+                    <li>Add support for Ledger Flex (#4494)</li>
+                    <li>Update Qt to 5.15.17 (#4498)</li>
+                    <li>Update P2Pool to v4.11 (#4505)</li>
+                    <li>Minor bug fixes</li>
+                </ul>
+            </description>
+        </release>
+
         <release version="0.18.4.2" date="2025-08-26">
             <description>
                 <ul>
