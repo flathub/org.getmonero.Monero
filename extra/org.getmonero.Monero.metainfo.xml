@@ -57,6 +57,16 @@
     <url type="contribute">https://getmonero.org/get-started/contributing</url>
 
     <releases>
+        <release version="0.18.4.4" date="2025-11-19">
+            <description>
+                <ul>
+                    <li>Fix Ledger hardware wallet bug when rejecting secret view key export</li>
+                    <li>Update P2Pool to v4.12 (#4519)</li>
+                    <li>Minor bug fixes</li>
+                </ul>
+            </description>
+        </release>
+
         <release version="0.18.4.3" date="2025-10-08">
             <description>
                 <ul>
