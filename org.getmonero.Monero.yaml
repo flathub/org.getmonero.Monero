@@ -11,6 +11,7 @@ finish-args:
   - --persist=Monero
   - --persist=.bitmonero
   - --persist=.p2pool
+  - --env=QT_QPA_PLATFORM=wayland;xcb
 
 cleanup:
   - /include
