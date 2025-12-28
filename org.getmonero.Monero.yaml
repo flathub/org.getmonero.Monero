@@ -5,13 +5,13 @@ sdk: org.kde.Sdk
 finish-args:
   - --share=network
   - --share=ipc
-  # Trying to force Wayland
   - --socket=fallback-x11
   - --socket=wayland
   - --device=all
   - --persist=Monero
   - --persist=.bitmonero
   - --persist=.p2pool
+  - --env=QT_QPA_PLATFORM=wayland;xcb
 
 cleanup:
   - /include
