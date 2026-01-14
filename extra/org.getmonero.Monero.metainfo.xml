@@ -57,6 +57,18 @@
     <url type="contribute">https://getmonero.org/get-started/contributing</url>
 
     <releases>
+        <release version="0.18.4.5" date="2026-01-11">
+            <description>
+                <ul>
+                    <li>Fix Ledger Monero app crash (#4534)</li>
+                    <li>Add support for Ledger Nano Gen5 (#4539)</li>
+                    <li>Update P2Pool to v4.13 (#4543)</li>
+                    <li>Improve macOS dark mode support (#4537)</li>
+                    <li>Minor bug fixes</li>
+                </ul>
+            </description>
+        </release>
+
         <release version="0.18.4.4" date="2025-11-19">
             <description>
                 <ul>
