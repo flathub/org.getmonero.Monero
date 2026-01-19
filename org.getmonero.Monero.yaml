@@ -59,7 +59,6 @@ modules:
       - for x in 16 24 32 48 64 96 128 256; do install -Dpm644 images/appicons/${x}x${x}.png
         $FLATPAK_DEST/share/icons/hicolor/${x}x${x}/apps/$FLATPAK_ID.png; done
     modules:
-      - shared-modules/libusb/libusb.json
 
       - name: boost
         buildsystem: simple
