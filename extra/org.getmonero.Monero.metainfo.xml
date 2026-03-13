@@ -57,6 +57,20 @@
     <url type="contribute">https://getmonero.org/get-started/contributing</url>
 
     <releases>
+        <release version="0.18.4.7" date="2026-03-11">
+            <description>
+                <ul>
+                    <li>Fix GUI getting stuck during exit on macOS (#4558)</li>
+                    <li>Fix lack of focus during password dialog (#4549)</li>
+                    <li>Set password for temporary wallet during wizard wallet creation (#4556, #4571)</li>
+                    <li>Improve blockchain size estimate accuracy (#4552)</li>
+                    <li>Update Qt to 5.15.18 (#4565)</li>
+                    <li>Update p2pool to v4.14 (#4570)</li>
+                    <li>Minor bug fixes</li>
+                </ul>
+            </description>
+        </release>
+
         <release version="0.18.4.5" date="2026-01-11">
             <description>
                 <ul>
