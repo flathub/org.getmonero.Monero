@@ -55,8 +55,22 @@
     <url type="help">https://getmonero.org/resources/user-guides</url>
     <url type="contact">https://getmonero.org/community/hangouts</url>
     <url type="contribute">https://getmonero.org/get-started/contributing</url>
+    <url type="vcs-browser">https://github.com/monero-project/monero-gui</url>
 
     <releases>
+            <release version="0.18.5.0" date="2026-05-12">
+            <description>
+                <ul>
+                    <li>Move P2Pool install location to LocalAppData on Windows (#4575)</li>
+                    <li>Fix edge case in URI parsing (#4576)</li>
+                    <li>Disable offline tx creation with long payment id (#4579)</li>
+                    <li>Escape untrusted text in QR code scanning scenario (#4577)</li>
+                    <li>Update P2Pool to v4.15 (#4584)</li>
+                    <li>Minor bug fixes</li>
+                </ul>
+            </description>
+        </release>
+
         <release version="0.18.4.7" date="2026-03-11">
             <description>
                 <ul>
