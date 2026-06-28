@@ -127,8 +127,8 @@ modules:
     sources:
       - type: git
         url: https://github.com/SChernykh/p2pool
-        tag: v4.17
-        commit: 5f4857be30a8e2d12f31e5b2a0c27a0af0135ac0
+        tag: v4.17.1
+        commit: 9b7395b8c97e7705a138dda2f4edef6b91eebe5f
         x-checker-data:
           type: git
           tag-pattern: ^v([\d.]+)$
