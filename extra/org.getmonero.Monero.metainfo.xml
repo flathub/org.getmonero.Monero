@@ -58,7 +58,26 @@
     <url type="vcs-browser">https://github.com/monero-project/monero-gui</url>
 
     <releases>
-            <release version="0.18.5.0" date="2026-05-12">
+        <release version="0.18.5.1" date="2026-07-08">
+            <description>
+                <ul>
+                    <li>Fix a memory safety issue during QR code scanning (#4597)</li>
+                    <li>Fix wallet freeze on shutdown edge case (#4603)</li>
+                    <li>Prevent CSV formula injection during export (#4609)</li>
+                    <li>Apply consistent text escaping across rich text views (#4610)</li>
+                    <li>Fix console log spam on startup (#4615)</li>
+                    <li>Check wallet file directory is writable during wallet creation (#4617)</li>
+                    <li>Add confirmation dialog for unauthenticated OpenAlias (#4618)</li>
+                    <li>Fix generic name in .desktop file (#4590)</li>
+                    <li>Hide update popup during device passphrase prompt (#4623)</li>
+                    <li>Set desktop entry ID for the application (#4625)</li>
+                    <li>Update P2Pool to v4.17.1 (#4620)</li>
+                    <li>Minor bug fixes</li>
+                </ul>
+            </description>
+        </release>
+
+        <release version="0.18.5.0" date="2026-05-12">
             <description>
                 <ul>
                     <li>Move P2Pool install location to LocalAppData on Windows (#4575)</li>
