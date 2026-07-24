@@ -58,6 +58,18 @@
     <url type="vcs-browser">https://github.com/monero-project/monero-gui</url>
 
     <releases>
+        <release version="0.18.5.2" date="2026-07-21">
+            <description>
+                <ul>
+                    <li>Fix wallet generation during first use (#4657)</li>
+                    <li>Warn when adjusting KDF rounds (#4641)</li>
+                    <li>Fix precision loss when generating payment requests with large amounts (#4649)</li>
+                    <li>Create wallets in memory in wizard (#4654)</li>
+                    <li>Minor bug fixes</li>
+                </ul>
+            </description>
+        </release>
+
         <release version="0.18.5.1" date="2026-07-08">
             <description>
                 <ul>
