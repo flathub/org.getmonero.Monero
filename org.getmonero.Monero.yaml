@@ -1,6 +1,6 @@
 app-id: org.getmonero.Monero
 runtime: org.kde.Platform
-runtime-version: 5.15-25.08
+runtime-version: 6.11
 sdk: org.kde.Sdk
 finish-args:
   - --share=network
@@ -42,7 +42,7 @@ modules:
     sources:
       - type: git
         url: https://github.com/monero-project/monero-gui.git
-        commit: 56483fe1617be5f49507c2b89863a05a809aa4cb
+        commit: b370a18f129438e4fc4c8e4332eb711900c893f9
       - type: file
         path: extra/org.getmonero.Monero.desktop
       - type: file
