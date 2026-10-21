@@ -30,6 +30,7 @@ modules:
       - -DCMAKE_BUILD_TYPE=Release
       - -DWITH_DESKTOP_ENTRY=OFF
       - -DWITH_UPDATER=OFF
+      - -DSKIP_OPTIONAL_MONERO_BINARIES=OFF
     build-options:
       arch:
         aarch64:
