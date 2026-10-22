@@ -30,6 +30,7 @@ modules:
       - -DCMAKE_BUILD_TYPE=Release
       - -DWITH_DESKTOP_ENTRY=OFF
       - -DWITH_UPDATER=OFF
+      - -DSKIP_OPTIONAL_MONERO_BINARIES=OFF
     build-options:
       arch:
         aarch64:
@@ -41,8 +42,8 @@ modules:
             - -DARCH=default
     sources:
       - type: archive
-        url: https://downloads.getmonero.org/gui/monero-gui-source-v0.18.5.2.tar.bz2
-        sha256: c4fcdb606ae79f6f9f9f718f15ccc5cc411c8be5759a5172dc2736e1bfc3b8f8
+        url: https://downloads.getmonero.org/gui/monero-gui-source-v0.18.5.4.tar.bz2
+        sha256: 4ae93a69c26a540fb4ff1f26d4d5e477f5167509310db91c1e49773f46de949e
         x-checker-data:
           type: json
           url: https://api.github.com/repos/monero-project/monero-gui/releases/latest
