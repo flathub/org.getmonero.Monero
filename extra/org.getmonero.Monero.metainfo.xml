@@ -58,6 +58,15 @@
     <url type="vcs-browser">https://github.com/monero-project/monero-gui</url>
 
     <releases>
+        <release version="0.18.5.4" date="2026-10-17">
+            <description>
+                <ul>
+                    <li>Fix reopening testnet and stagenet wallets (#4737)</li>
+                    <li>Minor bug fixes</li>
+                </ul>
+            </description>
+        </release>
+
         <release version="0.18.5.3" date="2026-10-06">
             <description>
                 <ul>
