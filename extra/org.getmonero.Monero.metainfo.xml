@@ -58,6 +58,36 @@
     <url type="vcs-browser">https://github.com/monero-project/monero-gui</url>
 
     <releases>
+        <release version="0.18.5.4" date="2026-10-17">
+            <description>
+                <ul>
+                    <li>Fix reopening testnet and stagenet wallets (#4737)</li>
+                    <li>Minor bug fixes</li>
+                </ul>
+            </description>
+        </release>
+
+        <release version="0.18.5.3" date="2026-10-06">
+            <description>
+                <ul>
+                    <li>Add more fiat currency options (#4714)</li>
+                    <li>Fix transaction history sorting (#4693)</li>
+                    <li>Fix stale transactions in send confirmation dialog (#4690, #4720)</li>
+                    <li>Keep daemon credentials scoped to each connection (#4709)</li>
+                    <li>Fix SOCKS5 proxy handling and proxy use for update verification (#4681, #4682, #4707, #4710)</li>
+                    <li>Fix fiat price updates and update checks on Linux (#4725)</li>
+                    <li>Abort saving wallets if setting the password fails (#4645)</li>
+                    <li>Fix restore height when entering dates without hyphens (#4672)</li>
+                    <li>Show key type when verifying signed messages (#4687)</li>
+                    <li>Improve display of transactions with multiple recipients (#4692)</li>
+                    <li>Display reserve proof amounts in XMR (#4719)</li>
+                    <li>Fix QR code scanning from the screen on macOS (#4663)</li>
+                    <li>Update P2Pool to v4.18.1 (#4715)</li>
+                    <li>Minor bug fixes</li>
+                </ul>
+            </description>
+        </release>
+
         <release version="0.18.5.2" date="2026-07-21">
             <description>
                 <ul>
