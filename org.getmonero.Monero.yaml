@@ -83,8 +83,8 @@ modules:
           - --with-libunbound-only
         sources:
           - type: archive
-            url: https://nlnetlabs.nl/downloads/unbound/unbound-1.26.1.tar.gz
-            sha256: 35a6dc0e425a9282c3426d9a3043144011bf0534aed4b73ab62c52aee0af1503
+            url: https://nlnetlabs.nl/downloads/unbound/unbound-1.26.2.tar.gz
+            sha256: d8ee7aa6bbb3ff1be7d9e57637d0d0ec2f18273a8efff1a0afe2c665858b96f7
             x-checker-data:
               type: html
               url: https://nlnetlabs.nl/downloads/unbound/
