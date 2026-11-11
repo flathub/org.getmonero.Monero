@@ -12,6 +12,7 @@ finish-args:
   - --persist=.bitmonero
   - --persist=.p2pool
   - --env=QT_QPA_PLATFORM=wayland;xcb
+  - --talk-name=org.kde.StatusNotifierWatcher
 
 cleanup:
   - /include
